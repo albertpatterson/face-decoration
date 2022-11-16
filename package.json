@@ -10,7 +10,8 @@
     "build": "npm run build-local && npm run build-remote",
     "serve-remote": "webpack serve --config remote/webpack.config.dev.js --no-hot --live-reload --port 5000",
     "serve-local": "webpack serve --config local/webpack.config.dev.js --open --no-hot --live-reload --port 5001",
-    "serve": "concurrently \"npm run serve-remote\"  \"npm run serve-local\""
+    "serve": "concurrently \"npm run serve-remote\"  \"npm run serve-local\"",
+    "deploy": "firebase deploy"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,7 @@
   "devDependencies": {
     "concurrently": "^7.5.0",
     "css-loader": "^6.7.1",
+    "firebase-cli": "^1.2.0",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.56.1",
@@ -28,5 +30,5 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1"
   },
-  "remoteUrl": "todo_add_remote_url"
+  "remoteUrl": "https://face-decoration-exercise.web.app"
 }
