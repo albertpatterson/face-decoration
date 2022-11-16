@@ -2,3 +2,4 @@ node_modules
 junk
 dist
 .DS_store
+.firebase
