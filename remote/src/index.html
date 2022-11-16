@@ -4,9 +4,138 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Face Decoration</title>
+    <style>
+      body {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    Hello world...
+    <h1 id="title">Face Decoration</h1>
+
+    <div id="details">
+      <p>
+        Stream live video from the camera and decorate faces using a free
+        <a
+          href="https://github.com/tensorflow/tfjs-models/tree/master/face-detection"
+        >
+          Tensorflow.js model</a
+        >.
+      </p>
+      <p id="build-your-own">
+        Build your own:
+        <a
+          href="https://stackblitz.com/edit/web-platform-znstzr?file=code.js,README.md"
+        >
+          <img
+            alt="Open in StackBlitz"
+            src="https://developer.stackblitz.com/img/open_in_stackblitz.svg"
+          />
+        </a>
+      </p>
+    </div>
+
+    <div id="user-code-error">
+      <pre id="user-code-error-display"></pre>
+    </div>
+
+    <div id="user-code-valid">
+      <div id="view-button-row" class="button-row">
+        <button onclick="launchTest()">Test</button>
+        <button onclick="launchExample()">Example</button>
+        <button onclick="launchCamera()">Camera</button>
+        <button onclick="launchScreen()">Screen</button>
+      </div>
+
+      <div id="test-section">
+        <div id="test-section-row">
+          <img
+            id="test-img"
+            src="./assets/example.jpeg"
+            alt="example image"
+            height="300"
+            width="300"
+          />
+          <canvas id="test-decoration-canvas" height="300" width="300"></canvas>
+        </div>
+      </div>
+
+      <div id="videos-section">
+        <div id="loading-indicator">
+          <h1>Loading</h1>
+          <div class="lds-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <p id="extra-loading-info">
+            Loading may take up to 1 minute for slow connections
+          </p>
+        </div>
+
+        <div class="canvas-wrapper">
+          <canvas id="decoration-canvas"></canvas>
+        </div>
+        <div class="video-wrapper" id="video-wrapper"></div>
+      </div>
+
+      <div id="preview-container">
+        <img src="./assets/sunglasses.png" alt="sunglasses" />
+        <img src="./assets/googly_eyes.png" alt="googly_eyes" />
+        <img src="./assets/radiant_eyes.png" alt="radiant_eyes" />
+        <img src="./assets/smile.png" alt="smile" />
+        <img src="./assets/crown.png" alt="crown" />
+        <img src="./assets/hat.png" alt="hat" />
+        <img src="./assets/headphones.png" alt="headphones" />
+        <img src="./assets/moustache.png" alt="moustache" />
+        <img src="./assets/shopkin.png" alt="shopkin" />
+        <img src="./assets/tiara.png" alt="tiara" />
+      </div>
+
+      <button id="add-btn">Add Image</button>
+
+      <input
+        type="file"
+        id="file-select"
+        accept="image/*"
+        style="display: none"
+      />
+    </div>
+
+    <!-- Require the peer dependencies of face-detection. -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"
+    ></script>
+
+    <!-- You must explicitly require a TF.js backend if you're not using the TF.js union bundle. -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"
+    ></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-detection"
+    ></script>
   </body>
 </html>

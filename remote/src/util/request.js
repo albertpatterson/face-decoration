@@ -17,9 +17,9 @@ function createRequestSender() {
         if (result.response) {
           res(result.response);
         } else if (result.error) {
-          rej(response.error);
+          rej(result.error);
         } else {
-          rej(`Invalid result: ${JSON.stringify(result)}`);
+          rej(new Error(`Invalid result: ${JSON.stringify(result)}`));
         }
       };
 

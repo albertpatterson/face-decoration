@@ -13,8 +13,17 @@
       width="300"
       height="200"
       src="remote_window_url"
+      allow="camera; microphone; display-capture; autoplay; clipboard-write;"
     >
     </iframe>
+
+    <script>
+      function logError(error) {
+        window.userCodeError = error;
+        window.removeEventListener('error', logError);
+      }
+      window.addEventListener('error', logError);
+    </script>
 
     <script defer src="./code.js"></script>
   </body>
