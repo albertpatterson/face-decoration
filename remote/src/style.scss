@@ -12,7 +12,7 @@ body {
 .button-row {
   display: flex;
   flex-direction: row;
-  margin: 25px;
+  margin-bottom: 25px;
   gap: 10px;
   button {
     flex: 1;
@@ -34,7 +34,21 @@ body {
 }
 
 #details {
-  text-align: center;
+  display: inline-block;
+  text-align: left;
+
+  ol {
+    margin-top: 0;
+  }
+}
+
+#details-footer {
+  display: inline-block;
+  text-align: left;
+
+  ul {
+    margin-top: 0;
+  }
 }
 
 .canvas-wrapper {
@@ -158,6 +172,7 @@ body {
   border-color: rgb(0, 225, 0);
   color: white;
   font-size: 36px;
+  margin-bottom: 25px;
 }
 
 #user-code-error {

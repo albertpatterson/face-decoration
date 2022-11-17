@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const packageJson = require('../package.json');
 
 module.exports = {
   mode: 'development',
@@ -36,8 +37,16 @@ module.exports = {
         test: /index\.html$/,
         loader: 'string-replace-loader',
         options: {
-          search: 'remote_window_url',
-          replace: 'http://localhost:5000',
+          multiple: [
+            {
+              search: 'remote_window_url',
+              replace: 'http://localhost:5000',
+            },
+            {
+              search: 'local_window_title',
+              replace: packageJson.localTitle,
+            },
+          ],
         },
       },
     ],

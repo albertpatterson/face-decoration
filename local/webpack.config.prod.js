@@ -107,8 +107,16 @@ module.exports = {
         test: /index\.html$/,
         loader: 'string-replace-loader',
         options: {
-          search: 'remote_window_url',
-          replace: packageJson.remoteUrl,
+          multiple: [
+            {
+              search: 'remote_window_url',
+              replace: packageJson.remoteUrl,
+            },
+            {
+              search: 'local_window_title',
+              replace: packageJson.localTitle,
+            },
+          ],
         },
       },
       {
