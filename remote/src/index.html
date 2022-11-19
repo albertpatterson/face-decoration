@@ -12,15 +12,10 @@
     </style>
   </head>
   <body>
-    <h1 id="title">Face Decoration</h1>
-
     <div id="details">
-      <ol>
-        <li>Choose a decoration or add you own.</li>
-        <li>
-          Edit the javascript code to position your decoration on the face
-        </li>
-      </ol>
+      <span>1: Choose a decoration or add your own.</span>
+      <span>2: Edit the .js code to position it.</span>
+      <span>3: See it on video.</span>
     </div>
 
     <div id="user-code-error">
@@ -28,6 +23,22 @@
     </div>
 
     <div id="user-code-valid">
+      <div id="decoration-picker">
+        <div id="preview-container">
+          <img src="./assets/sunglasses.png" alt="sunglasses" />
+          <img src="./assets/googly_eyes.png" alt="googly_eyes" />
+          <img src="./assets/radiant_eyes.png" alt="radiant_eyes" />
+          <img src="./assets/smile.png" alt="smile" />
+          <img src="./assets/crown.png" alt="crown" />
+          <img src="./assets/hat.png" alt="hat" />
+          <img src="./assets/headphones.png" alt="headphones" />
+          <img src="./assets/moustache.png" alt="moustache" />
+          <img src="./assets/shopkin.png" alt="shopkin" />
+          <img src="./assets/tiara.png" alt="tiara" />
+        </div>
+        <button id="add-btn">Add Image</button>
+      </div>
+
       <div id="view-button-row" class="button-row">
         <button onclick="launchTest()">Test</button>
         <button onclick="launchExample()">Example</button>
@@ -50,7 +61,7 @@
 
       <div id="videos-section">
         <div id="loading-indicator">
-          <h1>Loading</h1>
+          <h1 id="loading-message">Loading</h1>
           <div class="lds-spinner">
             <div></div>
             <div></div>
@@ -76,21 +87,6 @@
         </div>
         <div class="video-wrapper" id="video-wrapper"></div>
       </div>
-
-      <div id="preview-container">
-        <img src="./assets/sunglasses.png" alt="sunglasses" />
-        <img src="./assets/googly_eyes.png" alt="googly_eyes" />
-        <img src="./assets/radiant_eyes.png" alt="radiant_eyes" />
-        <img src="./assets/smile.png" alt="smile" />
-        <img src="./assets/crown.png" alt="crown" />
-        <img src="./assets/hat.png" alt="hat" />
-        <img src="./assets/headphones.png" alt="headphones" />
-        <img src="./assets/moustache.png" alt="moustache" />
-        <img src="./assets/shopkin.png" alt="shopkin" />
-        <img src="./assets/tiara.png" alt="tiara" />
-      </div>
-
-      <button id="add-btn">Add Image</button>
 
       <input
         type="file"
