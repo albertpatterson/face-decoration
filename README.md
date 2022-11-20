@@ -2,9 +2,12 @@
 
 The app will capture video and then apply artificial intelligence to decorate your face.
 
-Make your own with StackBlitz:
+Make your own:
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/web-platform-znstzr?file=README.md,code.js)
+[![Open in StackBlitz](./doc/stackblitz_btn.png)](https://stackblitz.com/edit/web-platform-ntaf41?file=code.js)
+[![Open in JSFiddle](./doc/jsfiddle_btn.png)](https://jsfiddle.net/apatterson189/h7etpj1c/4/)
+[![Open in REPLIT](./doc/replit_btn.png)](https://replit.com/@apatterson189/face-decoration)
+[![Open in CodePen](./doc/codepen_btn.png)](https://codepen.io/apatterson189/pen/ZERvOer)
 
 ![Demo](./doc/demo2.gif 'Demo')
 

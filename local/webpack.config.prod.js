@@ -60,7 +60,6 @@ const deleteMainPlugin = {
   apply: (compiler) => {
     compiler.hooks.afterEmit.tap('DeleteMainPlugin', async (compilation) => {
       await fs.promises.rm('./local/dist/index.js');
-      // await fs.promises.cp('./STACKBLITZ_README.md', './dist/README.md');
       await fs.promises.rm('./local/dist/code.js');
       await fs.promises.cp('./local/src/code.js', './local/dist/code.js');
     });
